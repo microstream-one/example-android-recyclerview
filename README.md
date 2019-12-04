@@ -1,10 +1,10 @@
 # Example: Android Recyclerview with Microstream
 
-This example shows how to effective use Microstream storage with Android Recyclerview. Recyclerview is an effective way how to implement list of views. 
-It is often used by different socials networks to shows the comments or posts. 
+This example shows how to effectively use Microstream storage with Android RecyclerView. RecyclerView is an effective way to implement a dynamic list of views. 
+It is often used by different socials networks to show comments or posts. 
 https://developer.android.com/guide/topics/ui/layout/recyclerview
 
-First you must add Microstream repository into your project. So in build.gralde file for whole project add these lines:
+First, you must add the Microstream repository into your project. So in build.gradle file for the whole project, add these lines:
 ```gradle
 allprojects {
     repositories {
@@ -16,18 +16,17 @@ allprojects {
     }
 }
 ```
-and for application add following dependencies:
+and for the application, add the following dependencies:
 ```gradle
 implementation 'one.microstream:storage.embedded:02.01.00-MS-GA'
 implementation 'one.microstream:storage.embedded.configuration:02.01.00-MS-GA'
 implementation 'androidx.recyclerview:recyclerview:1.1.0'
 ```
 
-Older version of Microstream did not support Android. 
-This example shows the list of fake Customer, with name and address. 
-The Customers are created with Javafaker library and stored into Microstream storage. 
-When the view is scrolled, the new customer is loaded from storage and when not exists, 
-one new is generated and stored. This example shows Microstream lazy functionality.
+This example shows a list of fake customers with name and address. 
+The customers are created with JavaFaker library and are stored into a Microstream storage. 
+When the view is scrolled, new entries are dynamically created either from existing customer instances loaded from storage or from 
+newly created ones that are stored on the fly. This example shows Microstream lazy loading functionality.
 
 ```java
 package one.microstream.android.data;
@@ -50,12 +49,10 @@ public class CustomerRoot {
     }
 }
 ```
-So, the Application does not need to load from the Datastore all Customers at the same time, 
-we load just Lazy reference and when the app is created and the Recyclerview will ask the database only for these customers 
-which are shown on Display. 
-Recyclerview offers also the possibility to remove elements what has already been seen from the memory. 
-The app needs just call clear() method on the Lazy reference. 
-This approach allows you to show thousands of items on the screen, without to ruin your heap.
+So, the Application does not need to load all customers from the data store at once, but just the Lazy reference pointing to them. Only when the RecyclerView actually requires customer instances to show them on the display, will they be loaded from the data store if they are not loaded, yet.
+RecyclerView also offers the possibility to remove elements from the memory that are not displayed anymore. 
+The app just needs to call the clear() method on the Lazy reference.
+This approach allows to show thousands of items on the screen without ruining the app's heap.
 
-This project is ready to build with Android studio. 
+This project is ready to be built with Android studio.
 
