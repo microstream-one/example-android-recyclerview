@@ -19,10 +19,6 @@ public class CustomerRepository {
     public CustomerRepository(Context context) {
         Path filesDir = context.getFilesDir().toPath();
         storage = EmbeddedStorage.start(customerRoot, filesDir);
-        if (customerRoot == null ) {
-            customerRoot = new CustomerRoot();
-            storage.storeRoot();
-        }
         faker = new Faker();
     }
 
