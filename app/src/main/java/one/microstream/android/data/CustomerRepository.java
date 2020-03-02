@@ -6,7 +6,7 @@ import com.github.javafaker.Faker;
 
 import java.nio.file.Path;
 
-import one.microstream.persistence.lazy.Lazy;
+import one.microstream.reference.Lazy;
 import one.microstream.storage.types.EmbeddedStorage;
 import one.microstream.storage.types.EmbeddedStorageManager;
 
@@ -23,10 +23,10 @@ public class CustomerRepository {
     }
 
     public void clearLazyRefence(Integer customerId) {
-         Lazy<Customer> lazy = customerRoot.getCustomerMap().get(customerId);
-         if (lazy != null) {
-             lazy.clear();
-         }
+        Lazy<Customer> lazy = customerRoot.getCustomerMap().get(customerId);
+        if (lazy != null) {
+            lazy.clear();
+        }
 
     }
 

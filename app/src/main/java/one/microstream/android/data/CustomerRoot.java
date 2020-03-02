@@ -3,7 +3,8 @@ package one.microstream.android.data;
 import java.util.HashMap;
 import java.util.Map;
 
-import one.microstream.persistence.lazy.Lazy;
+import one.microstream.reference.Lazy;
+
 
 public class CustomerRoot {
 
