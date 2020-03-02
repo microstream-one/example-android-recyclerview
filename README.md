@@ -21,6 +21,7 @@ and for the application, add the following dependencies:
 implementation 'one.microstream:storage.embedded:02.01.00-MS-GA'
 implementation 'one.microstream:storage.embedded.configuration:02.01.00-MS-GA'
 implementation 'androidx.recyclerview:recyclerview:1.1.0'
+annotationProcessor "one.microstream:base:02.01.00-MS-GA"
 ```
 
 This example shows a list of fake customers with name and address. 
