@@ -18,10 +18,10 @@ allprojects {
 ```
 and for the application, add the following dependencies:
 ```gradle
-implementation 'one.microstream:storage.embedded:02.01.00-MS-GA'
-implementation 'one.microstream:storage.embedded.configuration:02.01.00-MS-GA'
+implementation 'one.microstream:storage.embedded:02.02.00-MS-GA'
+implementation 'one.microstream:storage.embedded.configuration:02.02.00-MS-GA'
 implementation 'androidx.recyclerview:recyclerview:1.1.0'
-annotationProcessor "one.microstream:base:02.01.00-MS-GA"
+annotationProcessor "one.microstream:base:02.02.00-MS-GA"
 ```
 
 This example shows a list of fake customers with name and address. 
@@ -35,7 +35,7 @@ package one.microstream.android.data;
 import java.util.HashMap;
 import java.util.Map;
 
-import one.microstream.persistence.lazy.Lazy;
+import one.microstream.reference.Lazy;
 
 public class CustomerRoot {
 
